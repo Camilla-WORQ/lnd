@@ -2,7 +2,7 @@
  * Client-side API service for making HTTP requests
  */
 
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = Record<string, unknown>> {
   success: boolean
   data?: T
   error?: string

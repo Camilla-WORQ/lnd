@@ -72,7 +72,7 @@ export function generateRandomString(length: number = 8): string {
 /**
  * Debounce function
  */
-export function debounce<T extends (...args: any[]) => any>(
+export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
   wait: number
 ): (...args: Parameters<T>) => void {
@@ -86,7 +86,7 @@ export function debounce<T extends (...args: any[]) => any>(
 /**
  * Throttle function
  */
-export function throttle<T extends (...args: any[]) => any>(
+export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
@@ -161,7 +161,7 @@ export function sanitizeFormData(data: {
 /**
  * Check if two objects are equal (shallow comparison)
  */
-export function isEqual(obj1: any, obj2: any): boolean {
+export function isEqual(obj1: Record<string, unknown>, obj2: Record<string, unknown>): boolean {
   if (obj1 === obj2) return true
   if (obj1 == null || obj2 == null) return false
   if (typeof obj1 !== typeof obj2) return false

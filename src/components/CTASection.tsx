@@ -76,7 +76,7 @@ const CTASection: React.FC = () => {
           {/* Additional Info */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
-              What you'll receive:
+              What you&apos;ll receive:
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
@@ -121,7 +121,7 @@ const CTASection: React.FC = () => {
               }}
               className="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-600 transition-colors duration-200 shadow-lg"
             >
-              Subscribe Now - It's Free
+              Subscribe Now - It&apos;s Free
             </button>
           </div>
         </div>

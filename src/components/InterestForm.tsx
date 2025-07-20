@@ -2,8 +2,15 @@
 
 import { useState } from 'react';
 
+interface FormData {
+  fullName: string;
+  companyName: string;
+  workEmail: string;
+  contactNumber: string;
+}
+
 interface InterestFormProps {
-  onSubmit: (formData: any) => Promise<void>;
+  onSubmit: (formData: FormData) => Promise<void>;
   isSubmitting: boolean;
   submitStatus: 'idle' | 'success' | 'error';
   errorMessage: string;
@@ -15,14 +22,14 @@ const InterestForm: React.FC<InterestFormProps> = ({
   submitStatus,
   errorMessage
 }) => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     companyName: '',
     workEmail: '',
     contactNumber: ''
   });
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
@@ -107,7 +114,7 @@ const InterestForm: React.FC<InterestFormProps> = ({
           </svg>
           <div className="text-xs text-blue-800">
             <p className="font-medium mb-0.5">Stay Updated with New Courses</p>
-            <p>By subscribing, you'll receive notifications about new HRD Corp claimable training courses hosted at WORQ, exclusive early access, and special offers.</p>
+            <p>By subscribing, you&apos;ll receive notifications about new HRD Corp claimable training courses hosted at WORQ, exclusive early access, and special offers.</p>
           </div>
         </div>
       </div>
@@ -128,7 +135,7 @@ const InterestForm: React.FC<InterestFormProps> = ({
           <div className="flex items-center">
             <CheckIcon className="w-5 h-5 text-green-400 mr-2" />
             <p className="text-green-800 text-sm">
-              Thank you for subscribing! You'll now receive updates about new training courses at WORQ.
+              Thank you for subscribing! You&apos;ll now receive updates about new training courses at WORQ.
             </p>
           </div>
         </div>

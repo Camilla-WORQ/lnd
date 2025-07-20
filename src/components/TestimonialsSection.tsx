@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+
 
 interface Testimonial {
   id: string;
@@ -99,7 +99,7 @@ const TestimonialsSection: React.FC = () => {
 
               {/* Testimonial Content */}
               <blockquote className="text-sm text-gray-700 mb-4 leading-relaxed">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
               {/* Author Info */}

@@ -17,7 +17,7 @@ interface PricingTier {
 }
 
 const PricingSection: React.FC = () => {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
+  const [billingCycle] = useState<'monthly' | 'yearly'>('yearly');
 
   const pricingTiers: PricingTier[] = [
     {
@@ -82,8 +82,6 @@ const PricingSection: React.FC = () => {
       cta: 'Contact Sales'
     }
   ];
-
-  const savings = billingCycle === 'yearly' ? 'Save 20%' : '';
 
   return (
     <section className="py-20 bg-gray-50">
@@ -181,7 +179,7 @@ const PricingSection: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-white rounded-xl p-8 shadow-sm">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              What's Included
+              What&apos;s Included
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-center space-x-3">

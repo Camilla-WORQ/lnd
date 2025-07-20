@@ -3,13 +3,20 @@
 import { useState } from 'react';
 import InterestForm from './InterestForm';
 
+interface FormData {
+  fullName: string;
+  companyName: string;
+  workEmail: string;
+  contactNumber: string;
+}
+
 const HeroSection: React.FC = () => {
   const [submissionCount, setSubmissionCount] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleFormSubmit = async (formData: any) => {
+  const handleFormSubmit = async (formData: FormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
@@ -52,7 +59,7 @@ const HeroSection: React.FC = () => {
               </h1>
               <p className="text-base text-gray-600 leading-relaxed">
                 Explore a curated list of professional development courses run by our expert L&D partners. 
-                Enhance your team's skills in a premium learning environment, with the full cost being 
+                Enhance your team&apos;s skills in a premium learning environment, with the full cost being 
                 claimable through the Human Resource Development Corporation (HRD Corp).
               </p>
             </div>

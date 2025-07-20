@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+
 
 interface Course {
   id: string;
@@ -14,8 +14,6 @@ interface Course {
 }
 
 const CourseCatalog: React.FC = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string>('');
-
   const courses: Course[] = [
     {
       id: 'digital-marketing',
@@ -80,7 +78,6 @@ const CourseCatalog: React.FC = () => {
   ];
 
   const handleRegisterNow = (courseId: string) => {
-    setSelectedCourse(courseId);
     // For now, just log the selection since form is for newsletter
     console.log('Course selected:', courseId);
     // TODO: Implement course registration flow
@@ -193,7 +190,7 @@ const CourseCatalog: React.FC = () => {
               Need Customised Training?
             </h3>
             <p className="text-sm text-gray-600 mb-4">
-              We can develop tailored training programs specifically designed for your organization's needs.
+              We can develop tailored training programs specifically designed for your organization&apos;s needs.
             </p>
             <button
               onClick={() => {

@@ -121,7 +121,7 @@ const FeaturesSection: React.FC = () => {
             Why Choose WORQ Training?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            WORQ's training programs combine professional expertise with convenient access 
+            WORQ&apos;s training programs combine professional expertise with convenient access 
             to help you and your organization achieve learning and development goals.
           </p>
         </div>

@@ -117,7 +117,7 @@ export function withCORS(request: NextRequest) {
 /**
  * Request validation middleware
  */
-export function withValidation(validationSchema: any) {
+export function withValidation() {
   return async function (request: NextRequest) {
     try {
       if (request.method === 'POST' || request.method === 'PUT') {
@@ -136,7 +136,7 @@ export function withValidation(validationSchema: any) {
       }
       
       return null
-    } catch (error) {
+    } catch {
       return NextResponse.json(
         { error: 'Invalid request body' },
         { status: 400 }
@@ -148,7 +148,7 @@ export function withValidation(validationSchema: any) {
 /**
  * Error handling middleware
  */
-export function withErrorHandling(handler: Function) {
+export function withErrorHandling(handler: (request: NextRequest) => Promise<NextResponse>) {
   return async function (request: NextRequest) {
     try {
       return await handler(request)

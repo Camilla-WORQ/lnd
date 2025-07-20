@@ -22,7 +22,7 @@ export interface CreateSubmissionData {
 }
 
 // API response types
-export interface ApiResponse<T = any> {
+export interface ApiResponse<T = Record<string, unknown>> {
   success: boolean
   data?: T
   error?: string
@@ -111,7 +111,7 @@ export type RequiredFields<T, K extends keyof T> = T & Required<Pick<T, K>>
 // Event types (for future analytics)
 export interface AnalyticsEvent {
   event: string
-  properties?: Record<string, any>
+  properties?: Record<string, unknown>
   timestamp: string
   sessionId?: string
 }
